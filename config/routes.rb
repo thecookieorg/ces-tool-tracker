@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
+  get 'pages/index'
+
   devise_for :users
+  
+  authenticated :user do
+    root to: 'dashboards#index', as: :authenticated_root
+  end
+  
   get 'dashboards/index'
-  root 'dashboards#index'
+  
+  root 'pages#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
