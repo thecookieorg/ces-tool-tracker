@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tool name:</strong>
+  <%= @tool.tool_name %>
+</p>
+
+<p>
+  <strong>Person name:</strong>
+  <%= @tool.person_name %>
+</p>
+
+<p>
+  <strong>Date out:</strong>
+  <%= @tool.date_out %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @tool.city %>
+</p>
+
+<p>
+  <strong>Date in:</strong>
+  <%= @tool.date_in %>
+</p>
+
+<%= link_to 'Edit', edit_tool_path(@tool) %> |
+<%= link_to 'Back', tools_path %>
