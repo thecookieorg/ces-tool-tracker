@@ -1,3 +1,5 @@
+
+  <div class="panel-body">
 <%= form_for(@tool) do |f| %>
   <% if @tool.errors.any? %>
     <div id="error_explanation">
@@ -11,27 +13,33 @@
     </div>
   <% end %>
 
-  <div class="field">
+
+
+  <div class="form-group">
     <%= f.label :tool_name %><br>
-    <%= f.text_field :tool_name %>
+    <%= f.text_field :tool_name, class:"form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :person_name %><br>
-    <%= f.text_field :person_name %>
+    <%= f.text_field :person_name, class:"form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :date_out %><br>
-    <%= f.date_select :date_out %>
+    <%= f.date_select :date_out, class:"form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :city %><br>
-    <%= f.text_field :city %>
+    <%= f.text_field :city, class:"form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :date_in %><br>
-    <%= f.date_select :date_in %>
+    <%= f.date_select :date_in, class:"form-control" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit class:"btn btn-success" %> <%= link_to 'Cancel', tools_path, class:"btn btn-danger" %>
   </div>
 <% end %>
+  </div>
+</div>
+  </div>
+</div>
