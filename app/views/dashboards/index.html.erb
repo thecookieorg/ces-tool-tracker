@@ -1,4 +1,46 @@
+<%= render 'dashboards/nav' %>
 
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-  </li>
+<div class="row">
+    <div class="col-md-6 col-md-offset-2">
+        <h1>CES Tool Tracker</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-2">
+       <p id="notice"><%= notice %></p>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Tool name</th>
+      <th>Person name</th>
+      <th>Date out</th>
+      <th>City</th>
+      <th>Date in</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tools.each do |tool| %>
+      <tr>
+        <td><%= tool.tool_name %></td>
+        <td><%= tool.person_name %></td>
+        <td><%= tool.date_out %></td>
+        <td><%= tool.city %></td>
+        <td><%= tool.date_in %></td>
+        <td><%= link_to edit_tool_path(tool), class:"btn btn-warning" do %> <i class="fa fa-pencil-square-o"></i> Update <% end %> <%= link_to tool, method: :delete, class:"btn btn-danger", data: { confirm: 'Are you sure you want to delete this tool?' } do %> <i class="fa fa-trash-o"></i> Delete <% end %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to new_tool_path do %>
+    <i class="fa fa-plus"></i> Add Tool
+<% end %>
+
+    </div>
+</div>
