@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160126003803) do
+ActiveRecord::Schema.define(version: 20160127173247) do
 
   create_table "tools", force: :cascade do |t|
     t.string   "tool_name"
@@ -19,8 +19,13 @@ ActiveRecord::Schema.define(version: 20160126003803) do
     t.date     "date_out"
     t.string   "city"
     t.date     "date_in"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "tool_status",     default: false
+    t.string   "date_text_field"
+    t.string   "date_in_text"
+    t.string   "date_out_text"
+    t.text     "comments"
   end
 
   create_table "users", force: :cascade do |t|

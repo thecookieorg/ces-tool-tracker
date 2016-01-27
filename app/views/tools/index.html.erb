@@ -7,7 +7,7 @@
 </div>
 
 <div class="row">
-    <div class="col-md-6 col-md-offset-2">
+    <div class="col-md-8 col-md-offset-2">
        <p id="notice"><%= notice %></p>
 
 <table class="table table-bordered">
@@ -18,6 +18,7 @@
       <th>Date out</th>
       <th>City</th>
       <th>Date in</th>
+      <th>Comments</th>
       <th></th>
     </tr>
   </thead>
@@ -27,10 +28,15 @@
       <tr>
         <td><%= tool.tool_name %></td>
         <td><%= tool.person_name %></td>
-        <td><%= tool.date_out %></td>
+        <td><%= tool.date_out_text %></td>
         <td><%= tool.city %></td>
-        <td><%= tool.date_in %></td>
-        <td><%= link_to edit_tool_path(tool), class:"btn btn-warning" do %> <i class="fa fa-pencil-square-o"></i> Update <% end %> <% if current_user.admin? %> <%= link_to tool, method: :delete, class:"btn btn-danger", data: { confirm: 'Are you sure you want to delete this tool?' } do %> <i class="fa fa-trash-o"></i> Delete <% end %> <% end %></td>
+        <td><%= tool.date_in_text %></td>
+        <td><%= tool.comments %></td>
+        <td>
+            <p><%= link_to edit_tool_path(tool), class:"btn-sm btn-warning" do %> <i class="fa fa-pencil-square-o"></i> Update <% end %></p>
+            <p><% if current_user.admin? %> <%= link_to tool, method: :delete, class:"btn-sm btn-danger", data: { confirm: 'Are you sure you want to delete this tool?' } do %> <i class="fa fa-trash-o"></i> Delete <% end %> <% end %></p>
+          
+        </td>
       </tr>
     <% end %>
   </tbody>
